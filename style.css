@@ -1,0 +1,57 @@
+/* Styles for the form container */
+div {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 5px solid #6fdb72;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Styles for the form elements */
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ensure that padding and border are included in the element's total width and height */
+}
+
+button {
+    background-color: #6fd072;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1a7b1f;
+}
+
+/* Styles for response message */
+.response-msg {
+    margin-top: 20px;
+    color: green;
+}
+
+/* Styles for form submission message */
+.submit-msg {
+    margin-top: 20px;
+    color: blue;
+}
+body{
+    background-color:#f8aa4a;
+}
+h1{
+    color:#0093e8;
+}

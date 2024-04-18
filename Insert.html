@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>AngularJS Insert Record</title>
+<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+</head>
+<body>
+<div ng-controller="MyController">
+<h1>Insert Record</h1>
+<form ng-submit="insertRecord()">
+    <label>Name:</label>
+    <input type="text" ng-model="formData.sname" required><br>
+    <label>Roll No.:</label>
+    <input type="number" ng-model="formData.roll" required><br>
+    <label>Phone No.:</label>
+    <input type="number" ng-model="formData.phone" required><br>
+    <label>Grade:</label>
+    <input type="text" ng-model="formData.grade1" required><br>
+    <button type="submit">Insert Record</button>
+    </form>
+    <div ng-if="responsemsg">{{ responsemsg }}</div>
+    </div>
+    
+    <script>
+    angular.module('myApp', [])
+    .controller('MyController', function($scope, $http, $timeout) {
+    $scope.formData = {};
+    $scope.insertRecord = function() {
+    console.log('Form Data:', $scope.formData); // Log the form data
+    $http.post('insert.php', $scope.formData).then(function(response)
+    {
+    console.log('Response from PHP script:', response.data);
+    $scope.formData = {};
+    $scope.responsemsg=response.data;
+    $timeout(function() { $scope.responsemsg = ''; }, 3000);
+    })
+    };
+    });s
+    </script>
+    </body>
+    </html>
